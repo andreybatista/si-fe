@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    transition: width .6s ease;
+    background-color: #bd93f9;
+    animation: unset;
+  }
+  .owl-item.active .progress {
+    animation: progress-animation 5000ms forwards /*forwards*/ !important;
+  }
+  .owl-item.active:hover {
+      cursor: pointer;
+  }
+  .owl-item.active:hover .progress {
+     animation-play-state: paused !important;
+  }
+
+  
+@keyframes progress-animation{
+    0% {width: 0;}
+    100% {width: 100%;}
+  }
