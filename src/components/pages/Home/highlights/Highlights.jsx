@@ -10,8 +10,10 @@ import useHighlights from "../../../../../hooks/query/home/useHighlights";
 import { Col, Container, Row } from "react-bootstrap";
 
 export default function Highlights() {
-  const highlight = useHighlights();
-  console.log(useHighlights());
+  const {data} = useHighlights();
+  if(useHighlights().isLoading){
+    return ("teste");
+  }
   return (
     <OwlCarousel
       className="owl-theme"
@@ -22,7 +24,7 @@ export default function Highlights() {
       autoplayHoverPause={true}
       autoplayTimeout={5000}
     >
-      {highlight.data.results?.map((highlight) => (
+      {data.data.results?.map((highlight) => (
         <div
           key={highlight.id}
           className={styles.background}
