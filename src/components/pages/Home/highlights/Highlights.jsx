@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
 import OwlCarousel from "react-owl-carousel";
 
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-
 import styles from "./highlights.module.css";
 
-import useHighlights from "../../../../../hooks/query/home/useHighlights";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
-export default function Highlights() {
-  const {data} = useHighlights();
-  if(useHighlights().isLoading){
-    return ("teste");
-  }
+export default function Highlights({ highlights }) {
   return (
     <OwlCarousel
       className="owl-theme"
@@ -24,7 +16,7 @@ export default function Highlights() {
       autoplayHoverPause={true}
       autoplayTimeout={5000}
     >
-      {data.data.results?.map((highlight) => (
+      {highlights.data.results?.map((highlight) => (
         <div
           key={highlight.id}
           className={styles.background}

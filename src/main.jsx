@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import Home from "./pages/home";
+
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+
 const queryClient = new QueryClient();
 
 ReactDOM.render(

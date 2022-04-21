@@ -1,17 +1,22 @@
-import React, { useEffect, useState } from "react";
-import OwlCarousel from "react-owl-carousel";
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import React from "react";
+
+import useHighlights from "../../hooks/query/home/useHighlights";
+import useTopRated from "../../hooks/query/home/useHighlights";
 
 import TopRated from "../components/pages/Home/toprated/TopRated";
 import Highlights from "../components/pages/Home/highlights/Highlights";
 
 function Home() {
+  const highlights = useHighlights();
+  const topRated = useTopRated();
+  if (highlights.isLoading && topRated.isLoading) {
+    return "teste";
+  }
   return (
     <>
-      <Highlights/>
+      <Highlights highlights={highlights.data} />
 
-      {/* <TopRated /> */}
+      <TopRated topRated={topRated.data} />
     </>
   );
 }
