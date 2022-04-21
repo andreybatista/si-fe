@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import { getTopRated } from "../../../services/requests";
 
 const useTopRated = () => {
-  const data = useQuery("now_playing", getTopRated);
+  const data = useQuery("top_rated", getTopRated);
 
   return data;
 };

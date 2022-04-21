@@ -4,8 +4,13 @@ import OwlCarousel from "react-owl-carousel";
 import styles from "./highlights.module.css";
 
 import { Col, Row } from "react-bootstrap";
+import ProgressBar from "./ProgressBar";
 
 export default function Highlights({ highlights }) {
+
+  if (!highlights) {
+    return "teste";
+  }
   return (
     <OwlCarousel
       className="owl-theme"
@@ -29,9 +34,7 @@ export default function Highlights({ highlights }) {
             <p>{highlight.overview}</p>
             <Row>
               <Col className="d-flex flex-direction-column align-items-center">
-                <div className={`${styles.progressBar} mt-1`}>
-                  <div className="progress"></div>
-                </div>
+                <ProgressBar />
               </Col>
               <Col className="d-flex justify-content-end">
                 <a className={styles.btnLink}>Continue</a>
