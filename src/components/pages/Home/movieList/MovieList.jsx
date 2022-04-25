@@ -3,8 +3,9 @@ import OwlCarousel from "react-owl-carousel2";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 import styles from "./movielist.module.css";
+import { Container } from "react-bootstrap";
 
-export default function MovieList({ movies }) {
+export default function MovieList({ movies, title }) {
   if (!movies) {
     return "teste";
   }
@@ -17,6 +18,9 @@ export default function MovieList({ movies }) {
   };
   return (
     <div className={styles.carouselMovies + " movieSlideList"}>
+      <Container>
+        <h2 className={styles.title}>{title}</h2>
+      </Container>
       <OwlCarousel id="topRated" options={options}>
         {movies.data.results?.map((movie) => (
           <div key={movie.id} className={styles.boxPoster}>

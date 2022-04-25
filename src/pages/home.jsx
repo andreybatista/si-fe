@@ -22,9 +22,9 @@ function Home() {
     <>
       <Highlights highlights={highlights.data} />
 
-      <MovieList movies={popular.data} title="Populares" />
+      <MovieList movies={popular.data} title="Filmes Populares" />
 
-      <MovieList movies={topRated.data} title="Melhores" />
+      <MovieList movies={topRated.data} title="Bem Avaliados" />
     </>
   );
 }
