@@ -8,11 +8,6 @@ body {
   background-color: #2a2b42;
   overflow-x: hidden;
 }
-/* Movie Slide List*/
-.movieSlideList .owl-stage-outer {
-  overflow: visible !important;
-}
-/**/
 .progress {
   position: absolute;
   height: 100%;
