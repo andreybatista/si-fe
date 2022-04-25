@@ -4,7 +4,14 @@
   box-sizing: border-box;
   font-family: "Nunito", sans-serif;
 }
-
+body {
+  background-color: #2a2b42;
+}
+/* Movie Slide List*/
+.movieSlideList .owl-stage-outer {
+  overflow: visible !important;
+}
+/**/
 .progress {
   position: absolute;
   height: 100%;
@@ -90,3 +97,15 @@
 }
 
 /* Fim Loading */
+.CircularProgressbar-path {
+  stroke: #bd93f9 !important;
+}
+.CircularProgressbar-trail {
+  stroke: #2a2b42 !important;
+}
+.CircularProgressbar-text {
+  fill: #bd93f9 !important;
+}
+.CircularProgressbar-background {
+  fill: #2a2b42 !important;
+}
