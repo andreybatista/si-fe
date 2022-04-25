@@ -11,7 +11,7 @@ export default function MovieList({ movies }) {
   const options = {
     items: 2,
     dots: true,
-    stagePadding: 40,
+    stagePadding: 20,
     loop: true,
     mergeFit: false,
   };
