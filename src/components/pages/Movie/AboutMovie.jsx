@@ -26,7 +26,7 @@ export default function AboutMovie({ movie, members }) {
           {members.cast.map((member) => (
             <div key={member.credit_id}>
               <img
-                src={`https://image.tmdb.org/t/p/original/${member.profile_path}`}
+                src={`https://image.tmdb.org/t/p/w500/${member.profile_path}`}
               />
             </div>
           ))}

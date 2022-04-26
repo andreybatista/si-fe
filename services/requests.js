@@ -34,3 +34,10 @@ export async function getMembers(movie_id) {
   const {data} = await instance.get(`movie/${movie_id}/credits`);
   return data;
 }
+
+// YouTube: https://www.youtube.com/watch?v=
+// Vimeo: https://vimeo.com/
+
+// For example:
+// Youtube: https://www.youtube.com/watch?v=h6hZkvrFIj0
+// Vimeo: https://vimeo.com/282875052
