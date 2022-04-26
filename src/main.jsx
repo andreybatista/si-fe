@@ -8,6 +8,7 @@ import Home from "./pages/home";
 import 'react-owl-carousel2/src/owl.carousel.css';
 import "react-loading-skeleton/dist/skeleton.css";
 import 'react-circular-progressbar/dist/styles.css';
+import Movie from "./pages/movie";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" index element={<Home />} />
+        <Route path="/movie/:movie_id" index element={<Movie />} />
       </Routes>
     </BrowserRouter>
   </QueryClientProvider>,

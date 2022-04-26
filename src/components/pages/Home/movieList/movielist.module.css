@@ -1,5 +1,6 @@
 .boxPoster {
   padding: 0 5px;
+  display: block;
 }
 .carouselMovies {
   width: 100vw;

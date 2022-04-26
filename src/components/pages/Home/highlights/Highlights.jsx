@@ -8,9 +8,9 @@ import ProgressBar from "./ProgressBar";
 
 export default function Highlights({ highlights }) {
 
-  if (!highlights) {
-    return "teste";
-  }
+  // if (!highlights) {
+  //   return "teste";
+  // }
   return (
     <OwlCarousel
       className="owl-theme"

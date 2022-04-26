@@ -24,3 +24,8 @@ export async function getTopRated() {
   const data = await instance.get("movie/top_rated");
   return data;
 }
+
+export async function getMovieDetails(movie_id) {
+  const {data} = await instance.get(`movie/${movie_id}`);
+  return data;
+}
