@@ -5,7 +5,6 @@ import OwlCarousel from "react-owl-carousel2";
 import Loading from "../../Loading";
 import useMembers from "../../../../hooks/query/movie/useMembers";
 
-import Members from "./members";
 
 export default function AboutMovie({ movie }) {
   const members = useMembers(movie.id);
