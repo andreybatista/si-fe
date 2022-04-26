@@ -7,7 +7,10 @@ export default function AboutMovie({ movie }) {
     <>
       <div className="aboutMovie">
         <Container>
-          <h1>{movie.belongs_to_collection.name}</h1>
+          <h1>{movie.title}</h1>
+          <h2>
+            {movie.tagline}
+          </h2>
           <h2>{movie.original_title}</h2>
           <p>{movie.overview}</p>
         </Container>

@@ -115,7 +115,8 @@ body {
 }
 .aboutMovie {
   min-height: 49vh;
-  background-color: #2a2b42;
+  padding-top: 20px;
+  background-color: #0f0f0f;
   border-radius: 25px 25px 0 0;
   overflow: hidden;
   margin-top: -24px;
