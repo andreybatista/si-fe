@@ -29,3 +29,8 @@ export async function getMovieDetails(movie_id) {
   const {data} = await instance.get(`movie/${movie_id}`);
   return data;
 }
+
+export async function getMembers(movie_id) {
+  const {data} = await instance.get(`movie/${movie_id}/credits`);
+  return data;
+}

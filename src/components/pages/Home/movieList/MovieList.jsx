@@ -22,7 +22,7 @@ export default function MovieList({ movies, title }) {
       <Container>
         <h2 className={styles.title}>{title}</h2>
       </Container>
-      <OwlCarousel id="topRated" options={options}>
+      <OwlCarousel options={options}>
         {movies.data.results?.map((movie) => (
           <Link to={`movie/${movie.id}`} key={movie.id} className={styles.boxPoster}>
             <div className={styles.container}>

@@ -118,9 +118,9 @@ body {
   padding-top: 20px;
   background-color: #0f0f0f;
   border-radius: 25px 25px 0 0;
-  overflow: hidden;
   margin-top: -24px;
   color: #fff;
+  position: relative;
 }
 .aboutMovie h1 {
   font-size: 25px;
@@ -129,6 +129,7 @@ body {
   font-size: 20px;
   color: #bd93f9;
 }
+
 .aboutMovie p {
-font-size: 15px;
+  font-size: 15px;
 }
