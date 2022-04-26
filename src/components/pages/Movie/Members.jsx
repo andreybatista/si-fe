@@ -3,8 +3,7 @@ import OwlCarousel from "react-owl-carousel2";
 import useMembers from "../../../../hooks/query/movie/useMembers";
 import Loading from "../../Loading";
 
-export default function AboutMovie({ id }) {
-  const members = useMembers(id);
+export default function AboutMovie({ members }) {
   const options = {
     items: 2,
     dots: true,
@@ -12,24 +11,18 @@ export default function AboutMovie({ id }) {
     loop: true,
     mergeFit: false,
   };
-  if (members.isLoading) {
-    return <Loading />;
-  }
+  // if (members.isLoading) {
+  //   return <Loading />;
+  // }
   return (
     <>
       <OwlCarousel options={options}>
-        {members.data.cast.map((member) => (
-          <>
-            {member.profile_path ? (
-              <div key={member.credit_id}>
-                <img
-                  src={`https://image.tmdb.org/t/p/original/${member.profile_path}`}
-                />
-              </div>
-            ) : (
-              ""
-            )}
-          </>
+        {members.map((member) => (
+          <div key={member.credit_id}>
+            <img
+              src={`https://image.tmdb.org/t/p/original/${member.profile_path}`}
+            />
+          </div>
         ))}
       </OwlCarousel>
     </>
