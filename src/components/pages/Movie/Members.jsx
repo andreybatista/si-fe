@@ -18,12 +18,18 @@ export default function AboutMovie({ id }) {
   return (
     <>
       <OwlCarousel options={options}>
-        {members.data.cast?.map((member) => (
-          <div key={member.credit_id}>
-            <img
-              src={`https://image.tmdb.org/t/p/original/${member.profile_path}`}
-            />
-          </div>
+        {members.data.cast.map((member) => (
+          <>
+            {member.profile_path ? (
+              <div key={member.credit_id}>
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${member.profile_path}`}
+                />
+              </div>
+            ) : (
+              ""
+            )}
+          </>
         ))}
       </OwlCarousel>
     </>
