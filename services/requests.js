@@ -35,6 +35,11 @@ export async function getMembers(movie_id) {
   return data;
 }
 
+export async function getVideos(movie_id) {
+  const {data} = await instance.get(`movie/${movie_id}/videos`);
+  return data;
+}
+
 // YouTube: https://www.youtube.com/watch?v=
 // Vimeo: https://vimeo.com/
 
