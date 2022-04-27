@@ -25,7 +25,7 @@ export default function MovieList({ movies, title }) {
       <OwlCarousel options={options}>
         {movies.data.results?.map((movie) => (
           <a 
-            href={`https://vocal-pudding-374eaf.netlify.app/movie/${movie.id}`}
+            href={`../movie/${movie.id}`}
             key={movie.id}
             className={styles.boxPoster}
           >
