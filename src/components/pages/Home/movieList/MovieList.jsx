@@ -24,7 +24,7 @@ export default function MovieList({ movies, title }) {
       </Container>
       <OwlCarousel options={options}>
         {movies.data.results?.map((movie) => (
-          <a 
+          <a
             href={`/movie/${movie.id}`}
             key={movie.id}
             className={styles.boxPoster}
