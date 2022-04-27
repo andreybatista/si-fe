@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route exact path="/movie/:movie_id" element={<Movie />} />
+          <Route exact path="https://vocal-pudding-374eaf.netlify.app/movie/:movie_id" element={<Movie />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
