@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" index element={<Home />} />
-          <Route path="/movie/:movie_id" element={<Movie />} />
+          <Route exact path="/movie/:movie_id" element={<Movie />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
