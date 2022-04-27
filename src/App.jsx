@@ -10,7 +10,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <Routes path="/">
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="movie/:movie_id" element={<Movie />} />
         </Routes>
