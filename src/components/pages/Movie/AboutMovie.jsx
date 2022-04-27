@@ -1,11 +1,15 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import OwlCarousel from "react-owl-carousel2";
+import YouTube from "react-youtube";
 
 import Loading from "../../Loading";
 import useMembers from "../../../../hooks/query/movie/useMembers";
+import { CircularProgressbar } from "react-circular-progressbar";
+import { Link } from "react-router-dom";
+import MovieList from "../Home/movieList/MovieList";
 
-export default function AboutMovie({ movie, members, videos }) {
+export default function AboutMovie({ movie, members, videos, similars }) {
   const options = {
     items: 2,
     dots: true,
@@ -14,7 +18,7 @@ export default function AboutMovie({ movie, members, videos }) {
     mergeFit: false,
     lazyLoad: true,
   };
-  const optionsVideos = {
+  const carouselVideos = {
     items: 1,
     merge: true,
     loop: true,
@@ -31,6 +35,18 @@ export default function AboutMovie({ movie, members, videos }) {
       },
     },
   };
+  const optionsVideo = {
+    height: "300",
+    width: "100%",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      controls: 0,
+      autohide: 1,
+      wmode: "opaque",
+      origin: "http://localhost:3000/",
+    },
+  };
 
   return (
     <>
@@ -44,29 +60,27 @@ export default function AboutMovie({ movie, members, videos }) {
         </Container>
         <OwlCarousel options={options}>
           {members.cast.map((member) => (
-            <div key={member.credit_id}>
+            <div key={member.cast_id}>
               <img
                 src={`https://image.tmdb.org/t/p/w500/${member.profile_path}`}
               />
             </div>
           ))}
         </OwlCarousel>
-        <Container>
+        {/* <Container>
           <h2>Videos</h2>
-          <OwlCarousel options={optionsVideos}>
+          <OwlCarousel options={carouselVideos}>
             {videos.results.map((video) => (
               <div key={video.id}>
                 {video.site == "YouTube" && (
-                  <iframe
-                    className="w-100"
-                    height="250"
-                    src={`https://www.youtube.com/embed/${video.key}`}
-                  ></iframe>
+                  <YouTube videoId={video.key} opts={optionsVideo} />
                 )}
               </div>
             ))}
           </OwlCarousel>
-        </Container>
+        </Container> */}
+
+        <MovieList movies={similars} title="Filmes Similares" />
       </div>
     </>
   );

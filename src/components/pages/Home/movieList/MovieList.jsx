@@ -24,7 +24,11 @@ export default function MovieList({ movies, title }) {
       </Container>
       <OwlCarousel options={options}>
         {movies.data.results?.map((movie) => (
-          <Link to={`movie/${movie.id}`} key={movie.id} className={styles.boxPoster}>
+          <a 
+            href={`/movie/${movie.id}`}
+            key={movie.id}
+            className={styles.boxPoster}
+          >
             <div className={styles.container}>
               <div
                 className={styles.image}
@@ -33,8 +37,8 @@ export default function MovieList({ movies, title }) {
                 }}
               >
                 <CircularProgressbar
-                  value={movie.vote_average}
-                  text={`${movie.vote_average}`}
+                  value={movie.vote_average.toFixed(1)}
+                  text={`${movie.vote_average.toFixed(1)}`}
                   maxValue={10}
                   className={styles.CircularProgressbar}
                   background={true}
@@ -64,7 +68,7 @@ export default function MovieList({ movies, title }) {
                 />
               </div>
             </div>
-          </Link>
+          </a>
         ))}
       </OwlCarousel>
     </div>

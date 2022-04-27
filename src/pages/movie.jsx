@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import useMembers from "../../hooks/query/movie/useMembers";
 import useMovieDetails from "../../hooks/query/movie/useMovieDetails";
+import useSimilars from "../../hooks/query/movie/useSimilars";
 import useVideos from "../../hooks/query/movie/useVideos";
 
 import Loading from "../components/Loading";
@@ -13,16 +14,27 @@ function Movie() {
   const { movie_id } = useParams();
   const movieDetails = useMovieDetails(movie_id);
   const members = useMembers(movie_id);
+  const similars = useSimilars(movie_id);
   const videos = useVideos(movie_id);
 
-  if (movieDetails.isLoading || members.isLoading || videos.isLoading) {
+  if (
+    movieDetails.isLoading ||
+    members.isLoading ||
+    similars.isLoading ||
+    videos.isLoading
+  ) {
     return <Loading />;
   }
-  console.log(videos)
+
   return (
     <>
       <MainImage movie={movieDetails.data} />
-      <AboutMovie movie={movieDetails.data} members={members.data} videos={videos.data}/>
+      <AboutMovie
+        movie={movieDetails.data}
+        members={members.data}
+        videos={videos.data}
+        similars={similars}
+      />
     </>
   );
 }

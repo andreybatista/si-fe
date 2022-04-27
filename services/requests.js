@@ -40,6 +40,11 @@ export async function getVideos(movie_id) {
   return data;
 }
 
+export async function getSimilars(movie_id) {
+  const {data} = await instance.get(`movie/${movie_id}/similar`);
+  return data;
+}
+
 // YouTube: https://www.youtube.com/watch?v=
 // Vimeo: https://vimeo.com/
 
