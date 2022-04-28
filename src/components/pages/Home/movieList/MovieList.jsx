@@ -74,3 +74,5 @@ export default function MovieList({ movies, title }) {
     </div>
   );
 }
+
+
