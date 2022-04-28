@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import useMembers from "../../hooks/query/movie/useMembers";
@@ -25,7 +25,6 @@ function Movie() {
   ) {
     return <Loading />;
   }
-
   return (
     <>
       <MainImage movie={movieDetails.data} />

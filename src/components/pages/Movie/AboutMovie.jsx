@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import MovieList from "../Home/movieList/MovieList";
 
 export default function AboutMovie({ movie, members, videos, similars }) {
+  
   const options = {
     items: 2,
     dots: true,
@@ -67,18 +68,6 @@ export default function AboutMovie({ movie, members, videos, similars }) {
             </div>
           ))}
         </OwlCarousel>
-        {/* <Container>
-          <h2>Videos</h2>
-          <OwlCarousel options={carouselVideos}>
-            {videos.results.map((video) => (
-              <div key={video.id}>
-                {video.site == "YouTube" && (
-                  <YouTube videoId={video.key} opts={optionsVideo} />
-                )}
-              </div>
-            ))}
-          </OwlCarousel>
-        </Container> */}
 
         <MovieList movies={similars} title="Filmes Similares" />
       </div>
