@@ -8,10 +8,6 @@ import "react-owl-carousel2/src/owl.carousel.css";
 import "react-loading-skeleton/dist/skeleton.css";
 import "react-circular-progressbar/dist/styles.css";
 
-// const root = ReactDOMClient.createRoot(document.getElementById("root"));
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+const root = ReactDOMClient.createRoot(document.getElementById("root"));
+root.render(<App />);
+
