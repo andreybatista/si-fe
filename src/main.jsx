@@ -18,7 +18,6 @@ ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <div>
-        <h1>Hello, React Router!</h1>
         <Routes>
           <Route path="/">
             <Route index element={<Home />} />
