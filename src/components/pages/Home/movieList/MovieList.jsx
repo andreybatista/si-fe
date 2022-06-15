@@ -30,12 +30,8 @@ export default function MovieList({ movies, title }) {
             className={styles.boxPoster}
           >
             <div className={styles.container}>
-              <div
-                className={styles.image}
-                style={{
-                  backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`,
-                }}
-              >
+              <img className="img-fluid" width={480} height={800} src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}/>
+              <div className={styles.image}>
                 <CircularProgressbar
                   value={movie.vote_average.toFixed(1)}
                   text={`${movie.vote_average.toFixed(1)}`}
