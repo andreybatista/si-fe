@@ -6,24 +6,37 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
+  background-position-y: 5%;
+  padding: 0 17px 0 0;
 }
+
+@media(min-width: 500px) {
+  .background {
+    height: 75vh
+  }
+
+  .containerBox {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
 .boxText {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: end;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  padding: 50px 25px;
-  
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%);
+
   color: #fff;
 }
+
 .boxText h1 {
   font-size: 32px;
 }
+
 .boxText p {
   font-size: 15px;
   overflow: hidden;
@@ -33,6 +46,7 @@
   -webkit-box-orient: vertical;
   margin-top: 18px;
 }
+
 .progressBar {
   height: 10px;
   width: 80%;
@@ -40,6 +54,7 @@
   position: relative;
   border-radius: .25rem;
 }
+
 .btnLink {
   background-color: #383a59;
   border-radius: 25px;
