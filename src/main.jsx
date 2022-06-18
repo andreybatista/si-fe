@@ -2,9 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import * as ReactDOMClient from "react-dom/client";
-import App from "./App";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Movie from "./pages/movie";
@@ -29,20 +26,3 @@ ReactDOM.render(
   </QueryClientProvider>,
   document.getElementById("root")
 );
-
-// const root = ReactDOMClient.createRoot(document.getElementById("root"));
-// root.render(<App />);
-
-// import * as ReactDOMClient from "react-dom/client";
-// import { QueryClient, QueryClientProvider } from "react-query";
-// ReactDOM.render(
-//     <QueryClientProvider client={queryClient}>
-//       <BrowserRouter>
-//         <Routes>
-//           <Route exact path="/" index element={<Home />} />
-//           <Route path="/movie/:movie_id" index element={<Movie />} />
-//         </Routes>
-//       </BrowserRouter>
-//     </QueryClientProvider>,
-//     document.getElementById("root")
-//   );
