@@ -4,6 +4,7 @@ import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 
 import styles from "./movielist.module.css";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function MovieList({ movies, title }) {
   if (!movies) {
@@ -62,8 +63,8 @@ export default function MovieList({ movies, title }) {
       </Container>
       <OwlCarousel options={options}>
         {movies.data.results?.map((movie) => (
-          <a
-            href={`/movie/${movie.id}`}
+          <Link
+            to={`/movie/${movie.id}`}
             key={movie.id}
             className={styles.boxPoster}
           >
@@ -100,7 +101,7 @@ export default function MovieList({ movies, title }) {
                 />
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </OwlCarousel>
     </div>
