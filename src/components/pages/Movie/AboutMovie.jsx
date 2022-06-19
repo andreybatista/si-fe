@@ -7,46 +7,24 @@ import Loading from "../../Loading";
 import useMembers from "../../../../hooks/query/movie/useMembers";
 import { CircularProgressbar } from "react-circular-progressbar";
 import { Link } from "react-router-dom";
-import MovieList from "../Home/movieList/MovieList";
+import MovieList from "../Home/movieList/MovieList.jsx";
 
-export default function AboutMovie({ movie, members, videos, similars }) {
-  
+export default function AboutMovie({ movie, members, similars }) {
+
   const options = {
     items: 2,
     dots: true,
     loop: true,
     lazyLoad: true,
   };
-  const carouselVideos = {
-    items: 1,
-    merge: true,
-    loop: true,
-    margin: 10,
-    video: true,
-    lazyLoad: true,
-    center: true,
-    responsive: {
-      480: {
-        items: 2,
-      },
-      600: {
-        items: 4,
-      },
-    },
-  };
-  const optionsVideo = {
-    height: "300",
-    width: "100%",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1,
-      controls: 0,
-      autohide: 1,
-      wmode: "opaque",
-      origin: "http://localhost:3000/",
-    },
-  };
-
+  if (
+    !movie ||
+    !members ||
+    !similars ||
+    !similars
+  ) {
+    return <Loading />;
+  }
   return (
     <>
       <div className="aboutMovie">
