@@ -14,14 +14,10 @@ const queryClient = new QueryClient();
 ReactDOM.render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <div>
-        <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-            <Route path="movie/:movie_id" element={<Movie />} />
-          </Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="movie/:movie_id" element={<Movie />} />
+      </Routes>
     </BrowserRouter>
   </QueryClientProvider>,
   document.getElementById("root")
