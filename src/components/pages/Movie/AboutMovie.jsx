@@ -14,9 +14,7 @@ export default function AboutMovie({ movie, members, videos, similars }) {
   const options = {
     items: 2,
     dots: true,
-    stagePadding: 15,
     loop: true,
-    mergeFit: false,
     lazyLoad: true,
   };
   const carouselVideos = {
